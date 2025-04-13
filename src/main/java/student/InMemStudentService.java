@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class InMemStudentService {
+public class InMemStudentService implements StudentService {
 
-    private List<Student> students;
+    private final List<Student> students;
 
     public InMemStudentService() {
         students = new ArrayList<>();
@@ -16,16 +16,19 @@ public class InMemStudentService {
     }
 
     //CREATE
+    @Override
     public List<Student> addStudent(Student student) {
         students.add(student);
         return students;
     }
 
     //READ
+    @Override
     public List<Student> getAllStudents() {
         return students;
     }
 
+    @Override
     public Student getStudentById(long id) {
         for (Student student : students) {
             if (student.getId() == id) {
@@ -35,6 +38,7 @@ public class InMemStudentService {
         return null;
     }
 
+    @Override
     public Student getStudentByName(String name) {
         for (Student student : students) {
             if (student.getFullName().equals(name)) {
@@ -46,6 +50,7 @@ public class InMemStudentService {
 
     //UPDATE
 
+    @Override
     public Student updateStudentName(long id, String newFullName) {
         Student student = getStudentById(id);
         if (student != null) {
@@ -54,6 +59,7 @@ public class InMemStudentService {
         return student;
     }
 
+    @Override
     public Student updateStudentEmail(long id, String newEmail) {
         Student student = getStudentById(id);
         if (student != null) {
@@ -62,6 +68,7 @@ public class InMemStudentService {
         return student;
     }
 
+    @Override
     public Student updateStudentPassword(long id, String newPassword) {
         Student student = getStudentById(id);
         if (student != null) {
@@ -70,6 +77,7 @@ public class InMemStudentService {
         return student;
     }
 
+    @Override
     public Student updateStudentPhone(long id, String newPhone) {
         Student student = getStudentById(id);
         if (student != null) {
@@ -79,6 +87,7 @@ public class InMemStudentService {
         return student;
     }
 
+    @Override
     public Student updateStudentAddress(long id, String newAddress) {
         Student student = getStudentById(id);
         if (student != null) {
@@ -88,6 +97,7 @@ public class InMemStudentService {
         return student;
     }
 
+    @Override
     public Student updateStudentAge(long id, int newAge) {
         Student student = getStudentById(id);
         if (student != null) {
@@ -99,6 +109,7 @@ public class InMemStudentService {
 
 
 
+    @Override
     public boolean deleteStudent(long id) {
         Student student = getStudentById(id);
         if (student != null) {
