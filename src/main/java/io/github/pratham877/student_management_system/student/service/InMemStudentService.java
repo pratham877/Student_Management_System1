@@ -42,7 +42,7 @@ public class InMemStudentService implements StudentService {
     @Override
     public Student getStudentByName(String name) {
         for (Student student : students) {
-            if (student.getFullName().equals(name)) {
+            if (student.getName().equals(name)) {
                 return student;
             }
         }

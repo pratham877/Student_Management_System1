@@ -16,7 +16,7 @@ public class Student {
     @NotBlank(message = "Student Name Is Required ")
     @Size(min = 5,max = 30,message = "Student Name Must  Be Between 5 and 30 Characters ")
     @Column(nullable = false)
-    private String fullName;
+    private String name;
 
     @NotNull(message = "Student Age Is Required")
     @Column(nullable = false)
@@ -47,8 +47,8 @@ public class Student {
     }
 
 
-    public Student(String fullName, int age, String phone,  String email, String password, String Address) {
-        this.fullName = fullName;
+    public Student(String name, int age, String phone, String email, String password, String Address) {
+        this.name = name;
         this.age = age;
         this.phone = phone;
         this.email = email;
@@ -88,12 +88,12 @@ public class Student {
         this.id = id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String fullName) {
+        this.name = fullName;
     }
 
     public int getAge() {
@@ -116,19 +116,19 @@ public class Student {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return id == student.id && age == student.age && Objects.equals(fullName, student.fullName) && Objects.equals(phone, student.phone) && Objects.equals(email, student.email) && Objects.equals(password, student.password) && Objects.equals(Address, student.Address);
+        return id == student.id && age == student.age && Objects.equals(name, student.name) && Objects.equals(phone, student.phone) && Objects.equals(email, student.email) && Objects.equals(password, student.password) && Objects.equals(Address, student.Address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fullName, age, phone, email, password, Address);
+        return Objects.hash(id, name, age, phone, email, password, Address);
     }
 
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", fullName='" + fullName + '\'' +
+                ", fullName='" + name + '\'' +
                 ", age=" + age +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
