@@ -3,10 +3,9 @@ package io.github.pratham877.student_management_system.student;
 import java.util.List;
 
 public interface StudentService {
-    //CREATE
-    List<Student> addStudent(Student student);
 
-    //READ
+    Student addStudent(Student student);
+
     List<Student> getAllStudents();
 
     Student getStudentById(long id);
