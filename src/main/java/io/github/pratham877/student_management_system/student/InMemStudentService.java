@@ -17,9 +17,9 @@ public class InMemStudentService implements StudentService {
 
     //CREATE
     @Override
-    public List<Student> addStudent(Student student) {
+    public Student addStudent(Student student) {
         students.add(student);
-        return students;
+        return student;
     }
 
     //READ
