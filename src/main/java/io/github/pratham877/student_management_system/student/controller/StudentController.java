@@ -1,5 +1,7 @@
-package io.github.pratham877.student_management_system.student;
+package io.github.pratham877.student_management_system.student.controller;
 
+import io.github.pratham877.student_management_system.student.pojofile.Student;
+import io.github.pratham877.student_management_system.student.service.StudentService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,15 +52,6 @@ public class StudentController {
     @GetMapping("/ByName")
     public ResponseEntity<Student> getStudentByName(@RequestParam String name) {
         Student student = studentService.getStudentByName(name);
-        if (student != null) {
-            return ResponseEntity.ok(student);
-        }
-        return ResponseEntity.notFound().build();
-    }
-
-    @PutMapping("/{id}/Name")
-    public ResponseEntity<Student> updateStudentName(@PathVariable @RequestParam long id, String name) {
-        Student student = studentService.updateStudentName(id, name);
         if (student != null) {
             return ResponseEntity.ok(student);
         }

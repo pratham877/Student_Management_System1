@@ -1,4 +1,4 @@
-package io.github.pratham877.student_management_system.student;
+package io.github.pratham877.student_management_system.student.pojofile;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

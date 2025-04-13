@@ -1,4 +1,6 @@
-package io.github.pratham877.student_management_system.student;
+package io.github.pratham877.student_management_system.student.service;
+
+import io.github.pratham877.student_management_system.student.pojofile.Student;
 
 import java.util.List;
 
@@ -11,8 +13,6 @@ public interface StudentService {
     Student getStudentById(long id);
 
     Student getStudentByName(String name);
-
-    Student updateStudentName(long id, String newFullName);
 
     Student updateStudentEmail(long id, String newEmail);
 

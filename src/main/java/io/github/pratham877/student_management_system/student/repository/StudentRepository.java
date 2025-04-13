@@ -1,5 +1,6 @@
-package io.github.pratham877.student_management_system.student;
+package io.github.pratham877.student_management_system.student.repository;
 
+import io.github.pratham877.student_management_system.student.pojofile.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
