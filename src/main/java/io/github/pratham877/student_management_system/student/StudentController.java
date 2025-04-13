@@ -19,7 +19,7 @@ public class StudentController {
 
 
     @Autowired
-    public StudentController(@Qualifier("databaseStudentService") StudentService studentService) {
+    public StudentController( StudentService studentService) {
         this.studentService = studentService;
     }
 
