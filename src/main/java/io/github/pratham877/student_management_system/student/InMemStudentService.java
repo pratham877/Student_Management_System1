@@ -1,4 +1,4 @@
-package student;
+package io.github.pratham877.student_management_system.student;
 
 import org.springframework.stereotype.Service;
 
