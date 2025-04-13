@@ -1,6 +1,8 @@
-package student;
+package io.github.pratham877.student_management_system.student;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+
 import java.util.Objects;
 
 @Entity
@@ -11,25 +13,33 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-
-
+    @NotBlank(message = "Student Name Is Required ")
+    @Size(min = 5,max = 30,message = "Student Name Must  Be Between 5 and 30 Characters ")
     @Column(nullable = false)
     private String fullName;
 
-
+    @NotNull(message = "Student Age Is Required")
     @Column(nullable = false)
     private int age;
 
+    @NotNull(message = "Student Phone_no Is Required")
+    @Size(min = 10,max = 10,message = "Please Write Your Correct PhoneNo. Here")
     @Column(nullable = false)
     private String phone;
 
 
     @Column(nullable = false)
+    @Email(message = "Your Email Is Wrong Please Re-Write Your Correct Email ")
+    @NotBlank(message = "Student Email Is Required")
     private String email;
 
+    @NotBlank(message = "Student Password Is Required")
+    @Min(value = 8,message = "Password Should Be Strong And Minimum 8 letters")
     @Column(nullable = false)
     private String password;
 
+
+    @NotBlank(message = "Student Address Is Required")
     @Column(nullable = false)
     private String Address;
 
