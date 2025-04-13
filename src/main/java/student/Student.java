@@ -1,8 +1,6 @@
 package student;
 
 import jakarta.persistence.*;
-
-
 import java.util.Objects;
 
 @Entity
@@ -13,7 +11,8 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    
+
+
     @Column(nullable = false)
     private String fullName;
 
@@ -24,17 +23,55 @@ public class Student {
     @Column(nullable = false)
     private String phone;
 
+
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Column(nullable = false)
+    private String Address;
+
     public Student() {
     }
 
-    public Student( String fullName, int age, String phone) {
+
+    public Student(String fullName, int age, String phone,  String email, String password, String Address) {
         this.fullName = fullName;
         this.age = age;
         this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.Address = Address;
     }
 
     public long getId() {
         return id;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setId(long id) {
@@ -69,12 +106,12 @@ public class Student {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return id == student.id && age == student.age && Objects.equals(fullName, student.fullName) && Objects.equals(phone, student.phone);
+        return id == student.id && age == student.age && Objects.equals(fullName, student.fullName) && Objects.equals(phone, student.phone) && Objects.equals(email, student.email) && Objects.equals(password, student.password) && Objects.equals(Address, student.Address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fullName, age, phone);
+        return Objects.hash(id, fullName, age, phone, email, password, Address);
     }
 
     @Override
@@ -84,6 +121,9 @@ public class Student {
                 ", fullName='" + fullName + '\'' +
                 ", age=" + age +
                 ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", Address='" + Address + '\'' +
                 '}';
     }
 }
