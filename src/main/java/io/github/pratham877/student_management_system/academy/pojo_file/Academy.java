@@ -9,9 +9,9 @@ import java.util.Objects;
 @Table
 public class Academy {
     @Id
-    private String deparments;
+    private String deparment;
     @Column(nullable = false)
-    private String courses;
+    private String branch;
     private int year;
     @Column(nullable = false)
     private float marks;
@@ -21,28 +21,28 @@ public class Academy {
     public Academy() {
     }
 
-    public Academy(String deparments, String courses, int year, float marks, String enrolledSubjects) {
-        this.deparments = deparments;
-        this.courses = courses;
+    public Academy(String deparment, String branch, int year, float marks, String enrolledSubjects) {
+        this.deparment = deparment;
+        this.branch = branch;
         this.year = year;
         this.marks = marks;
         this.enrolledSubjects = enrolledSubjects;
     }
 
-    public String getDeparments() {
-        return deparments;
+    public String getDeparment() {
+        return deparment;
     }
 
-    public void setDeparments(String deparments) {
-        this.deparments = deparments;
+    public void setDeparment(String deparments) {
+        this.deparment = deparments;
     }
 
-    public String getCourses() {
-        return courses;
+    public String getBranch() {
+        return branch;
     }
 
-    public void setCourses(String courses) {
-        this.courses = courses;
+    public void setBranch(String courses) {
+        this.branch = courses;
     }
 
     public int getYear() {
@@ -74,19 +74,19 @@ public class Academy {
         if (o == null || getClass() != o.getClass())
             return false;
         Academy academy = (Academy) o;
-        return year == academy.year && Float.compare(marks, academy.marks) == 0 && Objects.equals(deparments, academy.deparments) && Objects.equals(courses, academy.courses) && Objects.equals(enrolledSubjects, academy.enrolledSubjects);
+        return year == academy.year && Float.compare(marks, academy.marks) == 0 && Objects.equals(deparment, academy.deparment) && Objects.equals(branch, academy.branch) && Objects.equals(enrolledSubjects, academy.enrolledSubjects);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deparments, courses, year, marks, enrolledSubjects);
+        return Objects.hash(deparment, branch, year, marks, enrolledSubjects);
     }
 
     @Override
     public String toString() {
         return "Academy{" +
-                "department='" + deparments + '\'' +
-                ", course='" + courses + '\'' +
+                "department='" + deparment + '\'' +
+                ", course='" + branch + '\'' +
                 ", year=" + year +
                 ", marks=" + marks +
                 ", enrolledSubjects=" + enrolledSubjects + '}';}
