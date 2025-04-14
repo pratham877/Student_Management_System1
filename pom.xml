@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>io.github.pratham877</groupId>
-    <artifactId>Student_Management_System</artifactId>
+    <artifactId>Student_Management_System_</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Student_Management_System</name>
     <description>Student_Management_System</description>

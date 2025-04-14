@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class InMemStudentService implements StudentService {
+public class
+InMemStudentService implements StudentService {
 
     private final List<Student> students;
 
