@@ -53,7 +53,7 @@ public class AcademyController {
      * @return The matching Academy record.
      */
     @GetMapping("/{department}")
-    public Academy getAcademyByDepartment(@PathVariable String department) {
+    public Academy getAcademyByDepartment(@PathVariable @RequestParam String department) {
         return academyService.getAcademyByDepartment(department);
     }
 
@@ -65,7 +65,7 @@ public class AcademyController {
      * @return The updated Academy record.
      */
     @PutMapping("/{department}/course")
-    public Academy updateCourse(@PathVariable String department, @RequestBody String newCourse) {
+    public Academy updateCourse(@PathVariable String department, @RequestParam String newCourse) {
         return academyService.updateCourse(department, newCourse);
     }
 
@@ -77,7 +77,7 @@ public class AcademyController {
      * @return The updated Academy record.
      */
     @PutMapping("/{department}/year")
-    public Academy updateYear(@PathVariable String department, @RequestBody int newYear) {
+    public Academy updateYear(@PathVariable String department, @RequestParam int newYear) {
         return academyService.updateYear(department, newYear);
     }
 
@@ -89,7 +89,7 @@ public class AcademyController {
      * @return The updated Academy record.
      */
     @PutMapping("/{department}/marks")
-    public Academy updateMarks(@PathVariable String department, @RequestBody float newMarks) {
+    public Academy updateMarks(@PathVariable String department, @RequestParam float newMarks) {
         return academyService.updateMarks(department, newMarks);
     }
 
@@ -101,7 +101,7 @@ public class AcademyController {
      * @return The updated Academy record.
      */
     @PutMapping("/{department}/subjects")
-    public Academy updateSubjects(@PathVariable String department, @RequestBody List<String> newSubjects) {
+    public Academy updateSubjects(@PathVariable String department, @RequestParam List<String> newSubjects) {
         return academyService.updateSubjects(department, newSubjects);
     }
 

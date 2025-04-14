@@ -9,6 +9,7 @@ import java.util.Objects;
 @Table
 public class Academy {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String deparment;
     @Column(nullable = false)
     private String branch;
