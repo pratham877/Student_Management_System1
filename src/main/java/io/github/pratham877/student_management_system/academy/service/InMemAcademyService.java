@@ -32,7 +32,7 @@ public class InMemAcademyService {
 
     public Academy getAcademyByDepartment(String department) {
         for (Academy academy : academyList) {
-            if (academy.getDeparments().equalsIgnoreCase(department)) {
+            if (academy.getDeparment().equalsIgnoreCase(department)) {
                 return academy;
             }
         }
@@ -43,7 +43,7 @@ public class InMemAcademyService {
     public Academy updateCourse(String department, String newCourse) {
         Academy academy = getAcademyByDepartment(department);
         if (academy != null) {
-            academy.setCourses(newCourse);
+            academy.setBranch(newCourse);
         }
         return academy;
     }
